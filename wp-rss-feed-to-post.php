@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name: WP RSS Aggregator - Feed to Post
- * Plugin URI: https://www.wprssaggregator.com/#utm_source=wpadmin&utm_medium=plugin&utm_campaign=wpraplugin
+ * Plugin Name: WP RSS Aggregator - Funeral Feed to Post
+ * Plugin URI: http://eternaglow.com/
  * Description: Adds feed-to-post conversion functionality to WP RSS Aggregator.
  * Version: 3.7.6
- * Author: RebelCode
- * Author URI: https://www.wprssaggregator.com
+ * Author: Eternaglow
+ * Author URI: http://eternaglow.com/
  * Text Domain: wprss
  * Domain Path: /languages/
  * License: GPLv3
