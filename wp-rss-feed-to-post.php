@@ -32,3 +32,13 @@ function modify_post_date_callback($post_date, $source) {
 function modify_post_dategmt_callback($post_date, $source) {	
 	return gmdate( 'Y-m-d H:i:s', current_time('timestamp') );
 }
+
+function remove_schedule_posts() {
+	global $wpdb;
+	$tableName = $wpdb->prefix."posts";
+	$sql = "DELETE FROM $tableName WHERE post_type in ('post', 'revision', 'wprss_feed_item') AND post_date > now()";
+	//$sql = "DELETE FROM $tableName WHERE post_type in ('post', 'revision', 'wprss_feed_item')";
+	$wpdb->query($sql);
+}
+register_activation_hook( __FILE__, 'remove_schedule_posts' );
+//add_action('init', 'remove_schedule_posts');
