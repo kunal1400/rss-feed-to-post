@@ -36,7 +36,8 @@ function modify_post_dategmt_callback($post_date, $source) {
 function remove_schedule_posts() {
 	global $wpdb;
 	$tableName = $wpdb->prefix."posts";
-	$sql = "DELETE FROM $tableName WHERE post_type in ('post', 'revision', 'wprss_feed_item') AND post_date > now()";
+	$sql = "DELETE FROM $tableName WHERE post_type in ('post', 'revision', 'wprss_feed_item') and post_status IN ('future','inherit')";
+	//$sql = "DELETE FROM $tableName WHERE post_type in ('post', 'revision', 'wprss_feed_item') AND post_date > now()";
 	//$sql = "DELETE FROM $tableName WHERE post_type in ('post', 'revision', 'wprss_feed_item')";
 	$wpdb->query($sql);
 }
